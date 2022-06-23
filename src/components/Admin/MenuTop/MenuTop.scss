@@ -2,7 +2,6 @@
 
 .menu-top {
   display: flex;
-  background-color: $menu-color;
 
   button {
     color: $font-light;
@@ -15,14 +14,16 @@
       color: $font-light;
     }
   }
-  &_left {
+  &__left {
     &-logo {
       width: 200px;
       padding: 0.1px;
     }
+    position: fixed;
+    left: 0;
   }
   &__right {
-    position: absolute;
+    position: fixed;
     right: 0;
   }
 }

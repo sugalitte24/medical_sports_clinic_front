@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout } from 'antd'
-import './LayoutAdmin.scss'
 import MenuTop from "../components/Admin/MenuTop";
 import MenuSider from "../components/Admin/MenuSider";
 
+import './LayoutAdmin.scss'
+import { Navigate } from "react-router-dom";
+
 export default function LayoutAdmin(props) {
-    console.log(props)
     const { children } = props;
     const { Header, Content, Footer } = Layout;
+    const [menuCollapsed, setMenuCollapsed] = useState(false);
+
+    const user = null;
+
+    if (!user) {
+        return (
+            <Navigate to="/admin/login" replace={true} />
+        )
+    }
+
 
     return (
         < Layout >
-            <MenuSider />
-            <Layout className="layout-admin">
-                <Header className="layout-admin__header">{/* menú top */}</Header>
-                <MenuTop />
+            <MenuSider menuCollapsed={menuCollapsed} />
+            <Layout className="layout-admin" style={{ marginLeft: menuCollapsed ? "80px" : "200px" }}>
+                <Header className="layout-admin__header">
+                    <MenuTop menuCollapsed={menuCollapsed} setMenuCollapsed={setMenuCollapsed} />
+                </Header>
                 <Content className="layout-admin__content">{children}</Content>
                 <Footer className="layout-admin__footer">Footer Steven</Footer>
             </Layout>

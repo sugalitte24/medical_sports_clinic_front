@@ -7,11 +7,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     display: flex;
     padding: 0;
-    height: 65;
-    background-color: $menu-color;
+    height: 65px; //
   }
 
   &__content {
@@ -20,6 +19,7 @@
   }
 
   &__footer {
-    padding: 20px;
+    padding: 0px;
+    margin: 20px;
   }
 }

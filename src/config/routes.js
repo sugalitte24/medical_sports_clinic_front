@@ -2,7 +2,7 @@ import LayoutAdmin from "../layouts/LayoutAdmin";
 import LayoutBasic from "../layouts/LayoutBasic";
 
 import AdminHome from "../pages/Admin";
-import AdminSingIn from "../pages/Admin/SignIn";
+import AdminSingIn from "../pages/Admin/SignIn/SignIn";
 
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
@@ -17,7 +17,7 @@ const routesAdmin = [
   },
   {
     path: "admin/login",
-    layout: LayoutAdmin,
+    layout: LayoutBasic,
     component: AdminSingIn,
   },
   { layout: LayoutAdmin, component: Error404 },
