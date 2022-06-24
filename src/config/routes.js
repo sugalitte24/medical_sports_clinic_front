@@ -20,7 +20,11 @@ const routesAdmin = [
     layout: LayoutBasic,
     component: AdminSingIn,
   },
-  { layout: LayoutAdmin, component: Error404 },
+  {
+    path: "*",
+    layout: LayoutAdmin,
+    component: Error404,
+  },
 ];
 
 const routesClient = [
@@ -34,7 +38,11 @@ const routesClient = [
     layout: LayoutBasic,
     component: Contact,
   },
-  { layout: LayoutAdmin, component: Error404 },
+  {
+    path: "*",
+    layout: LayoutAdmin,
+    component: Error404,
+  },
 ];
 
 const RoutesMap = [...routesAdmin, ...routesClient];

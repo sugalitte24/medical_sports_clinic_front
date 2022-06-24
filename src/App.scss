@@ -1,10 +1,12 @@
-@import './scss/index.scss';
-@import '~antd/dist/antd.css';
+@import "./scss/index.scss";
+@import "~antd/dist/antd.css";
 
-.app{
-   h3{
-    color: $primary-color
-   }
+.success {
+  border: 1px solid $success !important;
+  background-color: $background-success !important;
 }
 
- 
+.error {
+  border: 1px solid $error !important;
+  background-color: $background-error !important;
+}
