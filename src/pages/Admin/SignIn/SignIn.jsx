@@ -4,10 +4,17 @@ import { Layout, Tabs } from "antd";
 import Logo from '../../../assets/img/logo.png'
 import RegisterForm from "../../../components/Admin/RegisterForm";
 import LoginForm from "../../../components/Admin/LoginForm/LoginForm";
+import { getAccessTokenApi } from "../../../api/auth";
+import { Navigate } from "react-router-dom";
+
 
 export default function SignIn() {
   const { Content } = Layout;
   const { TabPane } = Tabs;
+
+  if (getAccessTokenApi()) {
+    return <Navigate to="/admin" />
+  }
   return (
     <Layout className="sign-in">
       <Content className="sign-in__content">

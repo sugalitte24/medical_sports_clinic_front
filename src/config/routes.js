@@ -3,6 +3,7 @@ import LayoutBasic from "../layouts/LayoutBasic";
 
 import AdminHome from "../pages/Admin";
 import AdminSingIn from "../pages/Admin/SignIn/SignIn";
+import AdminUser from "../pages/Admin/User/User";
 
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
@@ -19,6 +20,11 @@ const routesAdmin = [
     path: "admin/login",
     layout: LayoutBasic,
     component: AdminSingIn,
+  },
+  {
+    path: "admin/users",
+    layout: LayoutAdmin,
+    component: AdminUser,
   },
   {
     path: "*",
