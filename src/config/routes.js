@@ -4,6 +4,8 @@ import LayoutBasic from "../layouts/LayoutBasic";
 import AdminHome from "../pages/Admin";
 import AdminSingIn from "../pages/Admin/SignIn/SignIn";
 import AdminUser from "../pages/Admin/User/User";
+import AdminPatients from "../pages/Admin/Patients/Patients";
+import AdminMenuWeb from "../pages/Admin/MenuWeb/MenuWeb";
 
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
@@ -17,6 +19,11 @@ const routesAdmin = [
     component: AdminHome,
   },
   {
+    path: "/admin/patients",
+    layout: LayoutAdmin,
+    component: AdminPatients,
+  },
+  {
     path: "admin/login",
     layout: LayoutBasic,
     component: AdminSingIn,
@@ -25,6 +32,11 @@ const routesAdmin = [
     path: "admin/users",
     layout: LayoutAdmin,
     component: AdminUser,
+  },
+  {
+    path: "admin/menuWeb",
+    layout: LayoutAdmin,
+    component: AdminMenuWeb,
   },
   {
     path: "*",

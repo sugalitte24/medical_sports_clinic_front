@@ -15,7 +15,8 @@ export default function SignIn() {
     getUsersActiveApi(token, true).then(response => {
       setUsersActive(response.users)
     })
-  }, [token])
+    setReloadUsers(false)
+  }, [token, reloadUsers])
 
   useEffect(() => {
     getUsersActiveApi(token, false).then(response => {

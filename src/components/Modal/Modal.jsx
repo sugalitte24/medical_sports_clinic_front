@@ -11,8 +11,10 @@ export default function Modal(props) {
             centered
             visible={isVisible}
             onCancel={() => setIsVisible(false)}
+            width={1000}
             footer={false}>
             {children}
+
         </ModalAntd>
     )
 
