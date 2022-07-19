@@ -72,11 +72,13 @@ function GetPatients(props) {
     const viewPatient = patient => {
         setIsVisibleModal(true)
         setModalTitle(`Paciente ${patient.name} ${patient.lastname}`)
+        //console.log("data patient listpatient-->", patient);
         setModalContent(
             <ViewPatient
                 patient={patient}
                 setIsVisibleModal={setIsVisibleModal}
             />
+            //<h1>camilo es gay</h1>
         )
     }
 
@@ -87,11 +89,13 @@ function GetPatients(props) {
             <AddQueryForm
                 patient={patient}
                 setIsVisibleModal={setIsVisibleModal}
+                setReloadPatients={setReloadPatients}
             />
         )
     }
 
     return (
+
         <List
             className="patients-active"
             itemLayout="horizontal"
@@ -103,9 +107,9 @@ function GetPatients(props) {
                     viewPatient={viewPatient}
                     addQuery={addQuery}
                     setReloadPatients={setReloadPatients}
-
                 />
             )}
+            pagination={true}
         />
     )
 }

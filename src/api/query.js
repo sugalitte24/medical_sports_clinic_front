@@ -13,15 +13,10 @@ export function createQueryApi(patient, patientId) {
       return response.json();
     })
     .then((result) => {
-      if (result.patient) {
-        console.log(result.patient);
-        return { ok: true, message: "Consulta creada correctamente." };
-      } else {
-        return { ok: false, message: result.message };
-      }
+      return result.message;
     })
     .catch((err) => {
-      return { ok: false, message: err.message };
+      return err.message;
     });
 }
 

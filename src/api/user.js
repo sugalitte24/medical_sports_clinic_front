@@ -14,7 +14,6 @@ export function singUpApi(data) {
     })
     .then((result) => {
       if (result.user) {
-        console.log(result.user);
         return { ok: true, message: "Usuario creado correctamente." };
       } else {
         return { ok: false, message: result.message };

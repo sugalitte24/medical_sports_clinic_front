@@ -68,7 +68,6 @@ export default function RegisterForm() {
                 })
             } else {
                 const result = await singUpApi(inputs);
-                console.log(result);
                 if (!result.ok) {
                     notification["error"]({
                         message: result.message

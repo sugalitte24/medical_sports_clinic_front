@@ -23,7 +23,6 @@ export default function AddPatientForm(props) {
                 message: "Algunos campos son Obligatorios"
             });
         } else {
-            console.log(patientData);
             createPatientApi(patientData)
                 .then(response => {
                     notification["success"]({

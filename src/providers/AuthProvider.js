@@ -10,7 +10,6 @@ import {
 export const AuthContext = createContext();
 
 export default function AuthProvider(props) {
-  //console.log(props);
   const { children } = props;
 
   const [user, setUser] = useState({
@@ -29,7 +28,6 @@ function checkUserLogin(setUser) {
   const accessToken = getAccessTokenApi();
   if (!accessToken) {
     const refreshToken = getRefreshTokenApi();
-    console.log(accessToken);
 
     if (!refreshToken) {
       logout();

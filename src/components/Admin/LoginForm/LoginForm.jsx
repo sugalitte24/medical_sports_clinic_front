@@ -21,7 +21,6 @@ export default function LoginForm() {
     };
 
     const login = async e => {
-        console.log(inputs);
         const result = await singInApi(inputs)
 
         if (result.message) {
