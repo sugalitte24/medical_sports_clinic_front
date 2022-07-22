@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Form, Input, Row, Col } from "antd";
+import { Form, Input, Row, Col, Button } from "antd";
 import { MedicineBoxOutlined, HeartOutlined } from "@ant-design/icons";
 import TextArea from "antd/lib/input/TextArea";
-
+import { PDFDownloadLink } from "@react-pdf/renderer";
 
 
 import "./ListQuery.scss"
+import PDF from "../../../../PDF/PDF";
 
 export default function ListQuery(props) {
 
-    const { query } = props
+    const { query, patient } = props
     const [queryData, setQueryData] = useState({})
 
     useEffect(() => {
@@ -28,6 +29,20 @@ export default function ListQuery(props) {
             evolution: query?.evolution,
         })
     }, [query])
+
+
+    const passPDF = e => {
+
+        //console.log("patiente pdf--->", patient);
+        //console.log("query pdf--->", query);
+        return (
+            window.open(
+                <PDF
+                    patient={patient}
+                    query={query}
+                />)
+        )
+    }
 
     return (
         <Form className="form-view" layout="vertical">
@@ -136,6 +151,21 @@ export default function ListQuery(props) {
                     </Form.Item>
                 </Col>
             </Row>
+
+            <Form.Item>
+                <PDFDownloadLink
+                    document={
+                        <PDF
+                            patient={patient}
+                            query={query}
+                        />}
+                    fileName="historiaclinica.pdf"
+                >
+                    {({ blob, url, loading, error }) =>
+                        loading ? "Loading document..." : "Download now!"
+                    }
+                </PDFDownloadLink>
+            </Form.Item>
         </Form>
     )
 

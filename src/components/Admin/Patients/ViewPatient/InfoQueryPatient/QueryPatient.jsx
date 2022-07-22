@@ -10,7 +10,7 @@ import dateFormat from "dateformat";
 import "./QueryPatient.scss"
 
 export default function QueryPatient(props) {
-    const { queries } = props;
+    const { queries, patient } = props;
     const [isVisibleModal, setIsVisibleModal] = useState(false);
     const [modalContent, setModalContent] = useState(null);
     const [modalTitle, setModalTitle] = useState("");
@@ -21,6 +21,7 @@ export default function QueryPatient(props) {
                 <div className="list-query">
                     <GetQuery
                         queries={queries}
+                        patient={patient}
                         setIsVisibleModal={setIsVisibleModal}
                         setModalTitle={setModalTitle}
                         setModalContent={setModalContent}
@@ -39,7 +40,7 @@ export default function QueryPatient(props) {
 }
 
 function GetQuery(props) {
-    const { queries, setIsVisibleModal, setModalTitle, setModalContent } = props
+    const { queries, setIsVisibleModal, setModalTitle, setModalContent, patient } = props
 
     const viewQuery = query => {
         let dateQuery = dateFormat(query?.date_query, "dd-mm-yyyy")
@@ -48,6 +49,7 @@ function GetQuery(props) {
         setModalContent(
             <ListQuery
                 query={query}
+                patient={patient}
                 setIsVisibleModal={setIsVisibleModal}
             />
         )

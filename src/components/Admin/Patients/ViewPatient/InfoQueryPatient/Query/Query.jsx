@@ -22,6 +22,7 @@ export default function Query(props) {
             {queryData ?
                 <QueryPatient
                     queries={queryData}
+                    patient={patient}
                 /> : <h1>No hay consultas.</h1>}
         </div>
     )
