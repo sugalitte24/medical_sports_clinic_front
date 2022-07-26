@@ -13,7 +13,7 @@ export default function SignIn() {
   const { TabPane } = Tabs;
 
   if (getAccessTokenApi()) {
-    return <Navigate to="/admin" />
+    return <Navigate to="/admin/patients" />
   }
   return (
     <Layout className="sign-in">

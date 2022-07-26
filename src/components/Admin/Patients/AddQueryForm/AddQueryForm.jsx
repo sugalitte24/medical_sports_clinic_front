@@ -53,9 +53,10 @@ function AddForm(props) {
         <Form className="form-add" onFinish={createQuery}>
 
             <Row gutter={[16, 24]}>
-                <Col span={4}>
+                <Col span={5}>
                     <Form.Item>
                         <Input
+                            type='number'
                             prefix={<HeartOutlined />}
                             placeholder="Frecuencia Cardiaca"
                             value={queryData.hear_rate}
@@ -63,9 +64,10 @@ function AddForm(props) {
                         />
                     </Form.Item>
                 </Col>
-                <Col span={4}>
+                <Col span={5}>
                     <Form.Item>
                         <Input
+                            type='number'
                             prefix={<HeartOutlined />}
                             placeholder="Presión Sanguinea"
                             value={queryData.blood_pressure}
@@ -73,9 +75,10 @@ function AddForm(props) {
                         />
                     </Form.Item>
                 </Col>
-                <Col span={4}>
+                <Col span={5}>
                     <Form.Item>
                         <Input
+                            type='number'
                             prefix={<MedicineBoxOutlined />}
                             placeholder="Saturación O2"
                             value={queryData.o2_saturation}
@@ -86,6 +89,7 @@ function AddForm(props) {
                 <Col span={4}>
                     <Form.Item>
                         <Input
+                            type='number'
                             prefix={<MedicineBoxOutlined />}
                             placeholder="Peso"
                             value={queryData.weight}
@@ -93,23 +97,14 @@ function AddForm(props) {
                         />
                     </Form.Item>
                 </Col>
-                <Col span={4}>
+                <Col span={5}>
                     <Form.Item>
                         <Input
+                            type='number'
                             prefix={<MedicineBoxOutlined />}
                             placeholder="Talla"
                             value={queryData.size}
                             onChange={e => setQueryData({ ...queryData, size: e.target.value })}
-                        />
-                    </Form.Item>
-                </Col>
-                <Col span={4}>
-                    <Form.Item>
-                        <Input
-                            prefix={<MedicineBoxOutlined />}
-                            placeholder="IMC"
-                            value={queryData.imc}
-                            onChange={e => setQueryData({ ...queryData, imc: e.target.value })}
                         />
                     </Form.Item>
                 </Col>

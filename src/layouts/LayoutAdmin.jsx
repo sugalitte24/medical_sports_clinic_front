@@ -27,7 +27,7 @@ export default function LayoutAdmin(props) {
                         <MenuTop menuCollapsed={menuCollapsed} setMenuCollapsed={setMenuCollapsed} />
                     </Header>
                     <Content className="layout-admin__content">{children}</Content>
-                    <Footer className="layout-admin__footer">Footer Steven</Footer>
+                    <Footer className="layout-admin__footer">Clínica Médica Deportiva.</Footer>
                 </Layout>
             </Layout >
         );

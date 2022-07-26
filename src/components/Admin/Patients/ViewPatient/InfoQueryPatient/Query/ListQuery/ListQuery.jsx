@@ -30,20 +30,6 @@ export default function ListQuery(props) {
         })
     }, [query])
 
-
-    const passPDF = e => {
-
-        //console.log("patiente pdf--->", patient);
-        //console.log("query pdf--->", query);
-        return (
-            window.open(
-                <PDF
-                    patient={patient}
-                    query={query}
-                />)
-        )
-    }
-
     return (
         <Form className="form-view" layout="vertical">
 
@@ -161,9 +147,7 @@ export default function ListQuery(props) {
                         />}
                     fileName="historiaclinica.pdf"
                 >
-                    {({ blob, url, loading, error }) =>
-                        loading ? "Loading document..." : "Download now!"
-                    }
+                    <Button type="primary" className="btn-submit"> Descargar</Button>
                 </PDFDownloadLink>
             </Form.Item>
         </Form>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
-import { MenuOutlined, MedicineBoxFilled, UserOutlined } from '@ant-design/icons';
+import { MedicineBoxFilled, UserOutlined } from '@ant-design/icons';
 
 import './MenuSider.scss'
 
@@ -32,14 +32,6 @@ export default function MenuSider(props) {
                                 <UserOutlined />
                             </Link>,
                         label: 'Usuarios'
-                    },
-                    {
-                        key: '/admin/webMenu',
-                        icon:
-                            <Link to={"/admin/menuWeb"}>
-                                <MenuOutlined />
-                            </Link>,
-                        label: 'Menú'
                     }
                 ]}
             />
